@@ -1,0 +1,5 @@
+<ul class="routes">
+  <li *ngFor="let r of routes | keyvalue: originOrder">
+    <span class="route" *ngFor="let v of r.value">- {{r.key}} - {{v}}</span>
+  </li>
+</ul>

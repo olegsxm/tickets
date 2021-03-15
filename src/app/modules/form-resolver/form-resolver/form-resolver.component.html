@@ -1,0 +1,14 @@
+<ng-template [ngTemplateOutlet]="routesForm.length > 0 ? formTmplRef : emptyTmplRef"></ng-template>
+<hr>
+<button (click)="addTicket()" [disabled]="routesForm.invalid">Добавить билет</button>
+
+<ng-template #emptyTmplRef>
+  <div>Нет Билетов</div>
+</ng-template>
+
+<ng-template #formTmplRef>
+  <ul class="tickets">
+    <li *ngFor="let group of routesForm.controls" app-ticket [ticketGroup]="group"></li>
+  </ul>
+</ng-template>
+
